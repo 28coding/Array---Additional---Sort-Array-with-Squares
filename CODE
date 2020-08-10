@@ -1,0 +1,19 @@
+# Array---Additional---Sort-Array-with-Squares | InterviewBit Coding
+vector<int> Solution::solve(vector<int> &A) 
+{
+    int i=0;
+    int j=A.size()-1;
+    vector<int> ans(A.size());
+    int x = j;
+    while(x>=0){
+        if(abs(A[i]) > abs(A[j])){
+            ans[x--] = A[i]*A[i];
+            i++;
+        }
+        else{
+            ans[x--] = A[j]*A[j];
+            j--;
+        }
+    }
+    return ans;
+}
